@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#8f1537">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="ECC Quiz">
+    <title>ECC Clearing Quiz</title>
+    <link rel="manifest" href="./manifest.webmanifest">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="top-panel" aria-labelledby="app-title">
+        <div class="status-line">
+          <span class="badge">ECC Clearing</span>
+          <span id="streakLabel">Serie 0</span>
+        </div>
+        <h1 id="app-title">ECC Clearing Quiz</h1>
+        <p>Verstehe, wie ECC das Clearing für EEX, EPEX SPOT und Partnerbörsen absichert.</p>
+        <div class="energy-flow" aria-label="Vereinfachte Prozesskette von Handel bis Settlement">
+          <div class="node exchange">Trade</div>
+          <div class="link"></div>
+          <div class="node clearing">ECC</div>
+          <div class="link"></div>
+          <div class="node grid">Settle</div>
+        </div>
+      </section>
+
+      <nav class="tabbar" aria-label="App-Bereiche">
+        <button class="tab active" type="button" data-view="learn" aria-pressed="true">
+          <span aria-hidden="true">W</span>
+          <span>Wissen</span>
+        </button>
+        <button class="tab" type="button" data-view="quiz" aria-pressed="false">
+          <span aria-hidden="true">Q</span>
+          <span>Quiz</span>
+        </button>
+        <button class="tab" type="button" data-view="map" aria-pressed="false">
+          <span aria-hidden="true">P</span>
+          <span>Prozess</span>
+        </button>
+        <button class="tab" type="button" data-view="progress" aria-pressed="false">
+          <span aria-hidden="true">%</span>
+          <span>Stand</span>
+        </button>
+      </nav>
+
+      <section id="learn" class="view active-view" aria-labelledby="learn-title">
+        <div class="section-heading">
+          <h2 id="learn-title">Lernkarten</h2>
+          <span id="cardCounter">1 / 10</span>
+        </div>
+        <article class="learn-card" id="learnCard">
+          <div class="card-topic" id="cardTopic">EEX</div>
+          <h3 id="cardTitle"></h3>
+          <p id="cardText"></p>
+          <button class="ghost-button" type="button" id="flipCard">Merksatz zeigen</button>
+          <p class="memory-line" id="memoryLine" hidden></p>
+        </article>
+        <div class="two-actions">
+          <button class="secondary-button" type="button" id="prevCard">Zurück</button>
+          <div class="inline-logo" aria-label="ECC">
+            <img src="./ecc-logo-real.png" alt="ECC Logo">
+          </div>
+          <button class="primary-button" type="button" id="nextCard">Weiter</button>
+        </div>
+      </section>
+
+      <section id="quiz" class="view" aria-labelledby="quiz-title" inert>
+        <div class="section-heading">
+          <h2 id="quiz-title">Quiz</h2>
+          <span id="questionCounter">Frage 1</span>
+        </div>
+        <div class="meter" aria-label="Quizfortschritt">
+          <span id="quizMeter"></span>
+        </div>
+        <article class="question-card">
+          <div class="card-topic" id="questionTopic"></div>
+          <h3 id="questionText"></h3>
+          <div class="answers" id="answers"></div>
+          <div class="feedback" id="feedback" aria-live="polite"></div>
+        </article>
+        <div class="two-actions">
+          <button class="secondary-button" type="button" id="restartQuiz">Neu starten</button>
+          <button class="primary-button" type="button" id="nextQuestion" disabled>Weiter</button>
+        </div>
+      </section>
+
+      <section id="map" class="view" aria-labelledby="map-title" inert>
+        <div class="section-heading">
+          <h2 id="map-title">Prozesslandkarte</h2>
+          <span>Handel bis Lieferung</span>
+        </div>
+        <div class="relationship-map">
+          <button class="map-node selected" type="button" data-map="ccp">CCP</button>
+          <button class="map-node" type="button" data-map="roles">Rollen</button>
+          <button class="map-node" type="button" data-map="admission">Admission</button>
+          <button class="map-node" type="button" data-map="settlement">Settlement</button>
+          <button class="map-node" type="button" data-map="risk">Risk</button>
+          <button class="map-node" type="button" data-map="markets">Märkte</button>
+        </div>
+        <article class="detail-panel" id="mapDetail"></article>
+      </section>
+
+      <section id="progress" class="view" aria-labelledby="progress-title" inert>
+        <div class="section-heading">
+          <h2 id="progress-title">Dein Stand</h2>
+          <span id="scoreLabel">0%</span>
+        </div>
+        <div class="progress-ring" aria-label="Lernfortschritt">
+          <span id="progressNumber">0</span>
+          <small>richtige Antworten</small>
+        </div>
+        <div class="topic-list" id="topicStats"></div>
+        <article class="detail-panel sources-panel">
+          <h3>Quellenbasis</h3>
+          <p>Die Inhalte orientieren sich an den ECC-Seiten zu Clearing Services, Partner Exchanges, ECC History, Company und Admission Forms.</p>
+        </article>
+        <button class="danger-button" type="button" id="resetProgress">Fortschritt löschen</button>
+      </section>
+    </main>
+
+    <script src="./app.js?v=cm-2"></script>
+  </body>
+</html>
