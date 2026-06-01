@@ -222,6 +222,84 @@ const cards = [
     memory: "KYC ist die Identitäts- und Risikoprüfung am Anfang der Teilnahme."
   },
   {
+    topic: "Post-Trading",
+    title: "Was kommt nach dem Handschlag?",
+    text: "Die Workshop-Folien beschreiben Clearing und Settlement als das, was nach dem Handelsabschluss passiert. Zur Trading Value Chain gehören Trading, Clearing, Settlement und bei lagerfähigen Gütern auch Custody.",
+    memory: "Trading schließt den Deal, Post-Trading macht ihn erfüllbar."
+  },
+  {
+    topic: "Post-Trading",
+    title: "Clearing vs. Settlement",
+    text: "Clearing bereitet eine Transaktion für Settlement vor: Matching, Recording und Verarbeitung von Instruktionen. Settlement ist die rechtlich bindende Erfüllung: Cash oder Assets werden gegen Cash oder Assets übertragen.",
+    memory: "Clearing bereitet vor, Settlement erfüllt."
+  },
+  {
+    topic: "OTC vs Exchange",
+    title: "OTC, Börse und zentrales Clearing",
+    text: "Die Folien stellen OTC-Handel als weniger standardisiert und mit vielen bilateralen Schnittstellen dar. Börsenhandel und zentrales Clearing erhöhen Standardisierung, Transparenz, Anonymität und gesicherte Zahlung sowie Lieferung.",
+    memory: "Clearing reduziert bilaterale Komplexität und macht aus vielen Beziehungen eine zentrale Schnittstelle."
+  },
+  {
+    topic: "Network Effect",
+    title: "Warum hilft zentrales Clearing beim Netzwerk?",
+    text: "Ohne zentrale Stelle braucht jeder Teilnehmer Beziehungen zu vielen Gegenparteien. Die Folien zeigen mit Metcalfe's Law, dass Verbindungen stark wachsen. Zentrales Clearing reduziert die Schnittstellen aus Sicht des Teilnehmers auf eine zentrale Clearingbeziehung.",
+    memory: "Mehr Marktteilnehmer bedeuten viele bilaterale Kanten; Clearing bündelt sie."
+  },
+  {
+    topic: "Trade Registration",
+    title: "OTC-Geschäfte ins Clearing bringen",
+    text: "Trade Registration bedeutet, dass OTC-Transaktionen an einer Börse beziehungsweise Plattform für das Clearing registriert werden. So können bilaterale Deals in eine gesicherte Clearingumgebung übertragen werden.",
+    memory: "Trade Registration macht OTC-Deals clearingfähig."
+  },
+  {
+    topic: "DCP",
+    title: "DCP als Prepaid-Modell",
+    text: "Die Workshop-Folien beschreiben das DCP-Modell als Prepaid-Clearingmodell für Spotmärkte. DCPs können nur bis zu einem Limit handeln, das vorher besichert sein muss; Zahlungen laufen über eine Settlement Bank.",
+    memory: "DCP: erst Limit besichern, dann bis zu diesem Limit handeln."
+  },
+  {
+    topic: "Risk",
+    title: "Lines of Defence",
+    text: "ECCs Risikomanagement arbeitet mit mehreren Verteidigungslinien: Admission Criteria, Exposure Management, Initial Margins, Default Fund, Assessments/Replenishment und ECCs Skin-in-the-game.",
+    memory: "Risk Management ist ein Schutzsystem mit mehreren Schichten."
+  },
+  {
+    topic: "Margin Types",
+    title: "Spot- und Derivatemargins",
+    text: "Für Spotmärkte nennen die Folien IMSM für potenzielle künftige Exposure und CESM für aktuelle Zahlungsbeträge seit dem letzten Settlement. Bei Derivaten werden SPAN Initial Margin, Variation Margin und bei Optionen Premium Margin genutzt.",
+    memory: "Spot: IMSM/CESM. Derivate: SPAN, Variation, Premium."
+  },
+  {
+    topic: "Default Waterfall",
+    title: "Default Waterfall",
+    text: "Bei einem Ausfall werden zuerst Margins des defaultenden Clearing Members verwendet, dann dessen Default-Fund-Beitrag, danach ECCs Dedicated Own Resources, die verbleibenden Default-Fund-Beiträge, mögliche Replenishments und schließlich weiteres ECC-Kapital.",
+    memory: "Default Waterfall ordnet, wessen Ressourcen wann Verluste tragen."
+  },
+  {
+    topic: "Physical Settlement",
+    title: "Power und Gas: Nominierung",
+    text: "Für physische Lieferung von Power oder Gas sammelt ECC Handelsinformationen, aggregiert Nominierungen pro Marktteilnehmer, Lieferstunde und TSO und sendet Schedule-Informationen. Der TSO bestätigt Matching oder meldet Mismatches.",
+    memory: "Bei Power/Gas übersetzt Settlement Trades in nominierte Lieferfahrpläne."
+  },
+  {
+    topic: "Physical Settlement",
+    title: "EUAs und GoOs: Register statt Netz",
+    text: "Bei Emissionsrechten und Herkunftsnachweisen läuft Delivery über Registerbuchungen. Für EUAs zeigen die Folien eine Lieferung innerhalb des Union Registry Accounts von ECC, mit schneller Lieferung an Käufer.",
+    memory: "Nicht alles fließt durchs Netz: Zertifikate werden in Registern übertragen."
+  },
+  {
+    topic: "Financial Settlement",
+    title: "Automatisch, schnell, sicher",
+    text: "Financial Settlement umfasst Contract Value, Margins, Optionsprämien und Gebühren. Die Folien betonen automatische Zahlungen über Clearing Members oder Settlement Banks und Netting zu einem Zahlbetrag pro Bank.",
+    memory: "Financial Settlement netzt viele Zahlungsbestandteile zu einem Zahlbetrag."
+  },
+  {
+    topic: "Financial Settlement",
+    title: "TARGET2 und Fremdwährungen",
+    text: "Die Folien nennen TARGET2 als robuste EUR-Infrastruktur. Zusätzlich kann ECC Financial Settlement in USD, GBP und JPY über Correspondent Banks durchführen.",
+    memory: "EUR läuft über Zentralbankinfrastruktur; Fremdwährungen über Correspondent Banks."
+  },
+  {
     topic: "Regulierung",
     title: "Warum ist das streng reguliert?",
     text: "Eine Clearingstelle bündelt Risiken vieler Marktteilnehmer. Deshalb sind klare Regeln, Risikomanagement, Sicherheiten, Standardprozesse und regulatorische Anforderungen entscheidend für Vertrauen und Systemstabilität.",
@@ -990,6 +1068,193 @@ const questions = [
     explain: "ECC nennt Cross-Margining Benefits und Cross-Commodity-Effekte als Nutzen."
   },
   {
+    topic: "Post-Trading",
+    question: "Was meint der Workshop mit „nach dem Handschlag“?",
+    answers: [
+      "Clearing und Settlement sorgen nach dem Trade für Risikoabsicherung und Erfüllung.",
+      "Nach dem Handschlag ist der Marktprozess vollständig beendet.",
+      "Nur Marketing und Reporting beginnen danach."
+    ],
+    correct: 0,
+    explain: "Der Workshop beschreibt Clearing und Settlement als Post-Trade-Services nach dem Geschäftsabschluss."
+  },
+  {
+    topic: "Post-Trading",
+    question: "Was ist der Unterschied zwischen Clearing und Settlement?",
+    answers: [
+      "Clearing bereitet Transaktionen für Settlement vor; Settlement erfüllt Cash- oder Asset-Übertragungen.",
+      "Clearing ist physischer Netzbetrieb, Settlement ist Preisbildung.",
+      "Beide Begriffe bedeuten exakt dasselbe."
+    ],
+    correct: 0,
+    explain: "Die Folien definieren Clearing als Vorbereitung durch Matching, Recording und Processing; Settlement als Erfüllung."
+  },
+  {
+    topic: "OTC vs Exchange",
+    question: "Welches Problem des reinen OTC-Handels hebt der Workshop hervor?",
+    answers: [
+      "Viele bilaterale Schnittstellen, geringere Standardisierung und Gegenparteirisiko.",
+      "Zu viel automatische Anonymität.",
+      "Keine Möglichkeit, individuelle Preise zu vereinbaren."
+    ],
+    correct: 0,
+    explain: "Der Workshop kontrastiert OTC mit Börse/Clearing: Standardisierung, Transparenz, Anonymität und gesicherte Erfüllung nehmen zu."
+  },
+  {
+    topic: "Network Effect",
+    question: "Warum verwendet der Workshop Metcalfe's Law?",
+    answers: [
+      "Um zu zeigen, wie schnell bilaterale Verbindungen zwischen Marktteilnehmern wachsen.",
+      "Um Wetterrisiken von Windparks zu berechnen.",
+      "Um die Höhe von Stromsteuern festzulegen."
+    ],
+    correct: 0,
+    explain: "Je mehr Teilnehmer bilateral verbunden werden müssen, desto stärker wächst der Verbindungsaufwand."
+  },
+  {
+    topic: "Trade Registration",
+    question: "Was ist Trade Registration im Workshop-Kontext?",
+    answers: [
+      "OTC-Transaktionen werden zur Nutzung des Clearings registriert.",
+      "Ein TSO meldet physische Netzverluste.",
+      "Ein Kunde registriert seinen Haushaltszähler."
+    ],
+    correct: 0,
+    explain: "Trade Registration bringt bilaterale OTC-Deals in eine gesicherte Clearingumgebung."
+  },
+  {
+    topic: "DCP",
+    question: "Warum nennt der Workshop das DCP-Modell ein Prepaid-Clearingmodell?",
+    answers: [
+      "DCPs können nur bis zu einem vorher besicherten Limit handeln.",
+      "DCPs zahlen niemals Sicherheiten.",
+      "DCPs handeln nur Derivate mit täglicher Variation Margin."
+    ],
+    correct: 0,
+    explain: "Im DCP-Modell wird das Handelslimit vorab durch Collateral abgesichert."
+  },
+  {
+    topic: "Risk",
+    question: "Welche Reihenfolge passt zu ECCs Lines of Defence im Workshop?",
+    answers: [
+      "Admission Criteria, Exposure Management, Initial Margins, Default Fund, Assessment/Replenishment.",
+      "Logo, Folientitel, Seitenzahl, Fußnote.",
+      "Nur Default Fund, ohne Margins oder Admission Criteria."
+    ],
+    correct: 0,
+    explain: "Die Folien zeigen ein mehrschichtiges Schutzmodell, nicht nur eine einzelne Sicherheit."
+  },
+  {
+    topic: "Margin Types",
+    question: "Welche Margin-Typen gehören laut Workshop zu Spotmärkten?",
+    answers: [
+      "IMSM und CESM.",
+      "Variation Margin und Premium Margin ausschließlich.",
+      "Nur Default Fund."
+    ],
+    correct: 0,
+    explain: "IMSM deckt potenzielle künftige Exposure; CESM aktuelle Zahlungsbeträge seit dem letzten Settlement."
+  },
+  {
+    topic: "Margin Types",
+    question: "Welche Margin wird bei Derivaten genutzt, um tägliche Gewinne und Verluste auszugleichen?",
+    answers: [
+      "Variation Margin.",
+      "TP07 Margin.",
+      "Admission Margin."
+    ],
+    correct: 0,
+    explain: "Variation Margin setzt tägliche Gewinne und Verluste um."
+  },
+  {
+    topic: "Default Waterfall",
+    question: "Was ist der erste Schritt im Default Waterfall laut Workshop?",
+    answers: [
+      "Margin Collateral des defaultenden Clearing Members.",
+      "Sofort alle nicht-defaultenden Kunden belasten.",
+      "Zuerst ECC Remaining Own Capital."
+    ],
+    correct: 0,
+    explain: "Die Folie startet mit dem Margin Collateral des defaultenden Clearing Members."
+  },
+  {
+    topic: "Default Waterfall",
+    question: "Was bedeutet „Skin in the game“ bei ECC?",
+    answers: [
+      "ECCs eigene zweckgebundene Ressourcen im Default Waterfall.",
+      "Eine Marketingkampagne.",
+      "Das Eigenkapital des Käufers."
+    ],
+    correct: 0,
+    explain: "ECC Dedicated Own Resources stehen im Waterfall nach dem Beitrag des defaultenden Clearing Members."
+  },
+  {
+    topic: "Physical Settlement",
+    question: "Was passiert im Physical Settlement von Power oder Gas?",
+    answers: [
+      "ECC aggregiert Nominierungen und sendet Schedule-Informationen an relevante TSOs.",
+      "ECC liefert Zertifikate ausschließlich per E-Mail.",
+      "Settlement findet nur als Preisveröffentlichung statt."
+    ],
+    correct: 0,
+    explain: "Bei netzgebundenen Produkten werden Trades in Nominierungen und Fahrpläne übersetzt."
+  },
+  {
+    topic: "Physical Settlement",
+    question: "Wie werden EUAs laut Workshop physisch geliefert?",
+    answers: [
+      "Über Buchungen im Union Registry beziehungsweise ECCs Registry-Struktur.",
+      "Über Gasleitungen.",
+      "Durch Lieferung in Papierform an den TSO."
+    ],
+    correct: 0,
+    explain: "EUAs sind Registerprodukte; Lieferung erfolgt über Konten und Buchungen, nicht über Netze."
+  },
+  {
+    topic: "Market Coupling",
+    question: "Was soll Market Coupling im Strommarkt optimieren?",
+    answers: [
+      "Die Nutzung grenzüberschreitender Kapazitäten durch koordinierte Preise und Flüsse.",
+      "Die Anzahl der Admission Forms.",
+      "Die Schriftgröße in Börsenreports."
+    ],
+    correct: 0,
+    explain: "Die Folien beschreiben Market Coupling als koordinierte, marktbasierte Berechnung von Preisen und Flows zwischen Ländern."
+  },
+  {
+    topic: "Financial Settlement",
+    question: "Was wird laut Workshop im Financial Settlement genettet?",
+    answers: [
+      "Zahlungsbeträge aus Trades, Gebühren, Margins und Contract Values zu einem Betrag pro Bank.",
+      "Nur Folientitel.",
+      "Ausschließlich physische Lieferfahrpläne."
+    ],
+    correct: 0,
+    explain: "Die Folien betonen einen netted payment amount per Clearing Member beziehungsweise Bank."
+  },
+  {
+    topic: "Financial Settlement",
+    question: "Welche Infrastruktur nennt der Workshop für EUR-Financial-Settlement in Europa?",
+    answers: [
+      "TARGET2.",
+      "Amazon Marketplace.",
+      "Union Registry."
+    ],
+    correct: 0,
+    explain: "TARGET2 wird als robuste und zuverlässige ECB-Infrastruktur genannt."
+  },
+  {
+    topic: "Financial Settlement",
+    question: "Welche Fremdwährungen nennt der Workshop zusätzlich zu EUR?",
+    answers: [
+      "USD, GBP und JPY.",
+      "TRY, CHF und AUD.",
+      "Nur GBP."
+    ],
+    correct: 0,
+    explain: "Der Workshop nennt EUR, USD, GBP und JPY als Settlement-Währungen."
+  },
+  {
     topic: "Regulierung",
     question: "Warum ist eine Clearingstelle systemisch sensibel?",
     answers: [
@@ -1086,13 +1351,13 @@ const mapDetails = {
   },
   settlement: {
     title: "Settlement: Geld und Lieferung",
-    text: "Financial Settlement betrifft Zahlungen, Margins und Prämien. Physical Settlement betrifft Lieferungen oder Registerprozesse, etwa bei Strom, Gas, Emissionsrechten und Herkunftsnachweisen.",
-    bullets: ["Zentralbankgeld für EUR-Zahlungen", "Correspondent Banks für andere Währungen", "Nominierungen bei netzgebundenen Produkten"]
+    text: "Financial Settlement betrifft Zahlungen, Margins, Contract Values, Gebühren und Optionsprämien. Physical Settlement betrifft Lieferungen oder Registerprozesse, etwa bei Strom, Gas, Emissionsrechten und Herkunftsnachweisen.",
+    bullets: ["TARGET2 für EUR-Zahlungen", "Correspondent Banks für USD, GBP und JPY", "Nominierungen bei Power und Gas"]
   },
   risk: {
     title: "Risk: Margins und Verteidigungslinien",
-    text: "ECCs Risikomanagement nutzt tägliche Gewinn- und Verlustabrechnung, Margins und Beiträge zu einem Default Fund. Ziel ist, Ausfälle einzelner Teilnehmer kontrollierbar zu halten.",
-    bullets: ["Positionen und Volatilität", "Default Fund", "Standardisierte Prozesse"]
+    text: "ECCs Risikomanagement nutzt Admission Criteria, Exposure Management, Margins, Default Fund, Replenishment und eigene Ressourcen im Default Waterfall. Ziel ist, Ausfälle einzelner Teilnehmer kontrollierbar zu halten.",
+    bullets: ["IMSM/CESM im Spotmarkt", "SPAN und Variation Margin bei Derivaten", "Default Waterfall mit Skin-in-the-game"]
   },
   markets: {
     title: "Märkte: Mehr als EEX",
