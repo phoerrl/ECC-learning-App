@@ -1337,40 +1337,126 @@ const mapDetails = {
   ccp: {
     title: "CCP: Die Mitte des Risikos",
     text: "Als zentrale Gegenpartei tritt ECC zwischen Käufer und Verkäufer. Damit wird aus vielen bilateralen Risiken ein geregeltes, gemessenes und besichertes Clearingrisiko.",
-    bullets: ["Gegenparteirisiko übernehmen", "Netting ermöglichen", "Default-Prozesse bereitstellen"]
+    bullets: ["Gegenparteirisiko übernehmen", "Netting ermöglichen", "Default-Prozesse bereitstellen"],
+    visual: `
+      <div class="process-visual chain-visual">
+        <div class="visual-node">Trading</div>
+        <div class="visual-arrow">→</div>
+        <div class="visual-node strong">Clearing<br><small>CCP</small></div>
+        <div class="visual-arrow">→</div>
+        <div class="visual-node">Settlement</div>
+        <div class="visual-note">Post-Trading: Was nach dem Handschlag passiert</div>
+      </div>
+    `
   },
   roles: {
     title: "Rollen: NCM, DCP, CM",
     text: "Die Rollen unterscheiden sich vor allem danach, wer die Clearing-Infrastruktur stellt und in welchen Märkten der Zugang genutzt wird. NCM handelt über eine Clearing Bank, DCP cleart direkt in geeigneten Spotmärkten, CM ist die lizenzierte Clearing Bank mit Kapital-, Konto-, Sicherheiten- und Personalpflichten.",
-    bullets: ["NCM: Trading Participant ohne Clearing-Lizenz", "DCP: direkter Spotmarktzugang mit Settlement Bank", "CM: Garant, Payment Agent und direkter Risikoträger"]
+    bullets: ["NCM: Trading Participant ohne Clearing-Lizenz", "DCP: direkter Spotmarktzugang mit Settlement Bank", "CM: Garant, Payment Agent und direkter Risikoträger"],
+    visual: `
+      <div class="process-visual role-visual">
+        <div><b>NCM</b><span>handelt</span><small>über Clearing Member</small></div>
+        <div><b>DCP</b><span>Spot direkt</span><small>mit Settlement Bank</small></div>
+        <div><b>CM</b><span>cleart</span><small>Garant & Payment Agent</small></div>
+      </div>
+    `
   },
   admission: {
     title: "Admission Forms: Zugang einrichten",
     text: "Admission Forms decken den gesamten Eintritt in die ECC-Welt ab: Aufnahme als NCM, CM oder DCP Member, KYC, Verträge, Steuerdaten, technische Zugänge, operative Vollmachten und produktbezogene TP-Forms.",
-    bullets: ["NCM, CM und DCP Starter Kits", "Technical und Operational Forms", "TP-Forms für konkrete Produkte"]
+    bullets: ["NCM, CM und DCP Starter Kits", "Technical und Operational Forms", "TP-Forms für konkrete Produkte"],
+    visual: `
+      <div class="process-visual stack-visual">
+        <div>KYC & Starter Kit</div>
+        <div>NCM / CM / DCP Forms</div>
+        <div>Technical Forms</div>
+        <div>Operational Forms</div>
+        <div>TP-Forms je Produkt</div>
+      </div>
+    `
   },
   settlement: {
     title: "Settlement: Geld und Lieferung",
     text: "Financial Settlement betrifft Zahlungen, Margins, Contract Values, Gebühren und Optionsprämien. Physical Settlement betrifft Lieferungen oder Registerprozesse, etwa bei Strom, Gas, Emissionsrechten und Herkunftsnachweisen.",
-    bullets: ["TARGET2 für EUR-Zahlungen", "Correspondent Banks für USD, GBP und JPY", "Nominierungen bei Power und Gas"]
+    bullets: ["TARGET2 für EUR-Zahlungen", "Correspondent Banks für USD, GBP und JPY", "Nominierungen bei Power und Gas"],
+    visual: `
+      <div class="process-visual split-visual">
+        <section><b>Financial</b><span>Cash · Margins · Fees</span><small>TARGET2 / Correspondent Banks</small></section>
+        <section><b>Physical</b><span>Power · Gas · EUAs · GoOs</span><small>TSO-Nominierung / Register</small></section>
+      </div>
+    `
   },
   risk: {
     title: "Risk: Margins und Verteidigungslinien",
     text: "ECCs Risikomanagement nutzt Admission Criteria, Exposure Management, Margins, Default Fund, Replenishment und eigene Ressourcen im Default Waterfall. Ziel ist, Ausfälle einzelner Teilnehmer kontrollierbar zu halten.",
-    bullets: ["IMSM/CESM im Spotmarkt", "SPAN und Variation Margin bei Derivaten", "Default Waterfall mit Skin-in-the-game"]
+    bullets: ["IMSM/CESM im Spotmarkt", "SPAN und Variation Margin bei Derivaten", "Default Waterfall mit Skin-in-the-game"],
+    visual: `
+      <div class="process-visual waterfall-visual">
+        <div>1 · Margin Collateral</div>
+        <div>2 · Defaulting CM Fund</div>
+        <div>3 · ECC Skin-in-the-game</div>
+        <div>4 · Remaining Default Fund</div>
+        <div>5 · Replenishment</div>
+      </div>
+    `
   },
   markets: {
-    title: "Märkte: Mehr als EEX",
-    text: "ECC nennt unter anderem BSP, EEX, EPEX SPOT, HUPX, NOREXECO, SEEPEX und SEMOpx als Partnerbörsen. Die Produkte reichen von Power und Gas bis Emissionsrechte und Herkunftsnachweise.",
-    bullets: ["Power Spot und Futures", "Natural Gas", "Emission Rights und GoO"]
+    title: "Märkte: EEX und Partnerbörsen",
+    text: "Die EEX-Webseite stellt Strom, Erdgas, Energy Certificates, Umweltprodukte, Agrarprodukte, globale Commodities wie Fracht und LNG sowie Hydrogen-Transparenz in den Vordergrund. ECC cleart zusätzlich für Partnerbörsen; NOREXECO gehört in diesen Partnerkontext und steht für Pulp-&-Paper-Futures, nicht für ein klassisches EEX-Produkt namens „Fibre“.",
+    bullets: ["EEX: Power, Gas, Environmentals, Agriculturals, Freight/LNG", "Energy Certificates: u. a. Guarantees of Origin", "Partnerkontext: NOREXECO mit Pulp & Paper Futures"],
+    visual: `
+      <div class="process-visual hub-visual">
+        <div class="hub">ECC</div>
+        <span>Power</span><span>Gas</span><span>Environmentals</span><span>Freight/LNG</span><span>Agrar</span><span>Certificates</span>
+      </div>
+    `
   }
 };
+
+const progressGroups = [
+  {
+    label: "Clearing-Grundlagen",
+    topics: ["Clearing", "CCP", "ECC", "EEX", "Historie", "Post-Trading"]
+  },
+  {
+    label: "Admission & Forms",
+    topics: [
+      "Admission",
+      "TP-Forms",
+      "NCM Forms",
+      "CM Forms",
+      "DCP Forms",
+      "Technical Forms",
+      "Operational Forms",
+      "Formulare",
+      "KYC",
+      "Operations"
+    ]
+  },
+  {
+    label: "Mitgliedsrollen",
+    topics: ["Mitglieder", "Rollen", "NCM", "DCP", "CM", "CM Voraussetzungen", "GCM/DCM", "Indirect Access"]
+  },
+  {
+    label: "Risk & Margining",
+    topics: ["Risk", "Margin Types", "Default Waterfall", "Netting", "Regulierung"]
+  },
+  {
+    label: "Settlement & Delivery",
+    topics: ["Settlement", "Financial Settlement", "Physical Settlement", "TSO"]
+  },
+  {
+    label: "Märkte & Trading",
+    topics: ["Märkte", "Partner", "OTC vs Exchange", "Network Effect", "Trade Registration", "Market Coupling"]
+  }
+];
 
 const state = {
   cardIndex: 0,
   questionIndex: 0,
   selected: false,
   currentAnswers: [],
+  questionProgress: JSON.parse(localStorage.getItem("energyQuizQuestionProgress") || "{}"),
   progress: JSON.parse(localStorage.getItem("energyQuizProgress") || "{}")
 };
 
@@ -1379,6 +1465,11 @@ const $$ = (selector) => Array.from(document.querySelectorAll(selector));
 
 function saveProgress() {
   localStorage.setItem("energyQuizProgress", JSON.stringify(state.progress));
+  localStorage.setItem("energyQuizQuestionProgress", JSON.stringify(state.questionProgress));
+}
+
+function questionId(question) {
+  return `${question.topic}:${question.question}`;
 }
 
 function renderCard() {
@@ -1417,6 +1508,10 @@ function answerQuestion(index) {
   state.progress[topic] ||= { right: 0, total: 0 };
   state.progress[topic].total += 1;
   if (correct) state.progress[topic].right += 1;
+  const qid = questionId(item);
+  state.questionProgress[qid] ||= { attempts: 0, correct: 0 };
+  state.questionProgress[qid].attempts += 1;
+  if (correct) state.questionProgress[qid].correct += 1;
   saveProgress();
 
   $$(".answer").forEach((button) => {
@@ -1443,26 +1538,41 @@ function renderMap(key = "ccp") {
   $("#mapDetail").innerHTML = `
     <h3>${detail.title}</h3>
     <p>${detail.text}</p>
+    ${detail.visual || ""}
     <ul>${detail.bullets.map((item) => `<li>${item}</li>`).join("")}</ul>
   `;
 }
 
 function updateProgressView() {
-  const totals = Object.values(state.progress).reduce((acc, item) => ({
-    right: acc.right + item.right,
-    total: acc.total + item.total
-  }), { right: 0, total: 0 });
+  const totals = questions.reduce((acc, question) => {
+    const item = state.questionProgress[questionId(question)] || { attempts: 0, correct: 0 };
+    if (item.attempts) acc.total += 1;
+    if (item.correct) acc.right += 1;
+    return acc;
+  }, { right: 0, total: 0 });
   const percent = totals.total ? Math.round((totals.right / totals.total) * 100) : 0;
   $("#scoreLabel").textContent = `${percent}%`;
   $("#progressNumber").textContent = totals.right;
   $(".progress-ring").style.setProperty("--scoreAngle", `${percent * 3.6}deg`);
   $("#streakLabel").textContent = `${totals.right} richtig`;
 
-  const topics = [...new Set(questions.map((item) => item.topic))];
-  $("#topicStats").innerHTML = topics.map((topic) => {
-    const item = state.progress[topic] || { right: 0, total: 0 };
-    const label = item.total ? `${item.right}/${item.total}` : "noch offen";
-    return `<div class="topic-row"><strong>${topic}</strong><span>${label}</span></div>`;
+  const groupedTopics = new Set(progressGroups.flatMap((group) => group.topics));
+  const strayTopics = [...new Set(questions.map((item) => item.topic))]
+    .filter((topic) => !groupedTopics.has(topic))
+    .map((topic) => ({ label: topic, topics: [topic] }));
+
+  $("#topicStats").innerHTML = [...progressGroups, ...strayTopics].map((group) => {
+    const totalQuestions = questions.filter((item) => group.topics.includes(item.topic)).length;
+    const score = questions
+      .filter((item) => group.topics.includes(item.topic))
+      .reduce((acc, question) => {
+      const item = state.questionProgress[questionId(question)] || { attempts: 0, correct: 0 };
+      if (item.attempts) acc.total += 1;
+      if (item.correct) acc.right += 1;
+      return acc;
+    }, { right: 0, total: 0 });
+    const label = score.total ? `${score.right}/${score.total}` : `noch offen · ${totalQuestions} Fragen`;
+    return `<div class="topic-row"><strong>${group.label}</strong><span>${label}</span></div>`;
   }).join("");
 }
 
@@ -1511,6 +1621,7 @@ $("#restartQuiz").addEventListener("click", () => {
 
 $("#resetProgress").addEventListener("click", () => {
   state.progress = {};
+  state.questionProgress = {};
   saveProgress();
   updateProgressView();
 });
