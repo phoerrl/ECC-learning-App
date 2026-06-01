@@ -5,12 +5,12 @@
   --paper: #f8f6f7;
   --panel: #fffafd;
   --line: #e4d8de;
-  --green: #197363;
-  --green-dark: #8f1537;
-  --blue: #355f91;
-  --gold: #c98726;
-  --red: #8f1537;
-  --shadow: 0 18px 44px rgba(58, 19, 36, 0.14);
+  --green: #2f756d;
+  --green-dark: #4696B4;
+  --blue: #23677f;
+  --gold: #f0b23c;
+  --red: #9f3151;
+  --shadow: 0 18px 44px rgba(22, 82, 103, 0.14);
 }
 
 * {
@@ -20,8 +20,8 @@
 html {
   min-height: 100%;
   background:
-    radial-gradient(circle at 12% 0%, rgba(143, 21, 55, 0.16), transparent 29rem),
-    linear-gradient(150deg, #fbf0f4 0%, #f8f6f7 52%, #f3f6fb 100%);
+    radial-gradient(circle at 12% 0%, rgba(70, 150, 180, 0.18), transparent 29rem),
+    linear-gradient(150deg, #edf7fa 0%, #f8f6f7 52%, #eef6fb 100%);
 }
 
 body {
@@ -52,7 +52,7 @@ button {
   padding: 22px 18px 18px;
   border: 1px solid rgba(20, 32, 29, 0.08);
   border-radius: 8px;
-  background: linear-gradient(140deg, #5d102c 0%, #8f1537 56%, #c98726 138%);
+  background: linear-gradient(140deg, #23677f 0%, #4696B4 58%, #74bfd4 138%);
   color: #fffdf7;
   box-shadow: var(--shadow);
 }
@@ -227,7 +227,7 @@ h1 {
   margin-bottom: 12px;
   padding: 0 10px;
   border-radius: 999px;
-  background: #f7e8ef;
+  background: #e8f5f8;
   color: var(--green-dark);
   font-size: 0.8rem;
   font-weight: 800;

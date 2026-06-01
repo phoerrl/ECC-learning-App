@@ -1,10 +1,10 @@
 {
-  "name": "ECC Clearing Quiz",
+  "name": "ECC Quiz App",
   "short_name": "ECC Quiz",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f7f5ef",
-  "theme_color": "#8f1537",
+  "theme_color": "#4696B4",
   "icons": [
     {
       "src": "./ecc-icon-512.png",
